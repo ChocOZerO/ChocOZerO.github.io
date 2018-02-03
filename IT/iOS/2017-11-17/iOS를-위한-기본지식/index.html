@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>iOS를 위한 기본지식 | ChocOZerO&#39;s Learning Pad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="iOS 프로그래밍을 시작하기 위해서 필요한 지식들을 정리해 보았습니다.  필수환경XcodeXcode란 macOS에서 사용할 수 있는 통합개발환경(Integrated Development Environment, 이하 IDE)입니다.주로 macOS, iOS, watchOS, tvOS 개발을 위해 애플에서 개발됐으며, macOS에서 간단하게 App Store에서">
+<meta name="keywords" content="iOS,Swift,Xcode,Playground">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS를 위한 기본지식">
+<meta property="og:url" content="https://ChocOZerO.github.io/IT/iOS/2017-11-17/iOS를-위한-기본지식/index.html">
+<meta property="og:site_name" content="ChocOZerO&#39;s Learning Pad">
+<meta property="og:description" content="iOS 프로그래밍을 시작하기 위해서 필요한 지식들을 정리해 보았습니다.  필수환경XcodeXcode란 macOS에서 사용할 수 있는 통합개발환경(Integrated Development Environment, 이하 IDE)입니다.주로 macOS, iOS, watchOS, tvOS 개발을 위해 애플에서 개발됐으며, macOS에서 간단하게 App Store에서">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-02-03T05:48:17.864Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS를 위한 기본지식">
+<meta name="twitter:description" content="iOS 프로그래밍을 시작하기 위해서 필요한 지식들을 정리해 보았습니다.  필수환경XcodeXcode란 macOS에서 사용할 수 있는 통합개발환경(Integrated Development Environment, 이하 IDE)입니다.주로 macOS, iOS, watchOS, tvOS 개발을 위해 애플에서 개발됐으며, macOS에서 간단하게 App Store에서">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97783885-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5586917880991745",
+	enable_page_level_ads: true
+    });
+</script>
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">ChocOZerO&#39;s Learning Pad</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/resume">Resume</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/boarder.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/resume">Resume</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/boarder.png" />
+            <h2 id="name">Taehyeon Jake LEE</h2>
+            <h3 id="title">iOS Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Seoul, Korea</span>
+            <a id="follow" target="_blank" href="https://github.com/ChocOZerO/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                10
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                21
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/ChocOZerO" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/ChocOZerO" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/TH.Jake.Lee" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.instagram.com/chocozero/" target="_blank" title="instagram" class=tooltip>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="linkein" class=tooltip>
+                            <i class="fa fa-linkein"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <article id="post-iOS를-위한-기본지식" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            iOS를 위한 기본지식
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/IT/iOS/2017-11-17/iOS를-위한-기본지식/">
+            <time datetime="2017-11-16T16:38:29.000Z" itemprop="datePublished">2017-11-17</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/iOS/">iOS</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Playground/">Playground</a>, <a class="tag-link" href="/tags/Swift/">Swift</a>, <a class="tag-link" href="/tags/Xcode/">Xcode</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>iOS 프로그래밍을 시작하기 위해서 필요한 지식들을 정리해 보았습니다.</p>
+<hr>
+<h2 id="필수환경"><a href="#필수환경" class="headerlink" title="필수환경"></a>필수환경</h2><h3 id="Xcode"><a href="#Xcode" class="headerlink" title="Xcode"></a>Xcode</h3><p>Xcode란 macOS에서 사용할 수 있는 통합개발환경(Integrated Development Environment, 이하 IDE)입니다.<br>주로 macOS, iOS, watchOS, tvOS 개발을 위해 애플에서 개발됐으며, macOS에서 간단하게 App Store에서 다운받을 수 있습니다.<br>이미 기존 개발자라면 한번쯤을 들어봤을 이클립스(eclipse)나 Intellij:IDEA 를 연상하면 이해하기가 쉬울 것 같습니다.<br>간단히 개념을 설명하면 한가지 언어만이 아니라 여러 언어의 소스코드를 작성하거나 관리하는데 편의를 제공해주는 유용한 도구라고 할 수 있습니다.<br>하지만 각 IDE마다 특색이 있어서 특정 언어의 개발환경에 특화되어 좀 더 편리하게 최적화 되어 있는 편이며, Xcode의 경우 Objective-C나 Swift등을 활용하여 macOS, iOS, watchOS, tvOS등을 위한 프로그램을 개발 하는데에 좀 더 특화된 툴이라고 할 수 있습니다.</p>
+<h3 id="iOS"><a href="#iOS" class="headerlink" title="iOS"></a>iOS</h3><p>iOS를 이해하기 위해선 운영체제(Operating System, 이하 OS)를 먼저 이해해야 합니다.<br>간단히 정리하자면 하드웨어를 관리할뿐 아니라 응용 소프트웨어를 실행하기 위하여 실행되는 시스템 소프트웨어입니다. 보통 입출력과 메모리 할당과 같은 응용 프로그램과 컴퓨터 하드웨어 사이의 중재 역할을 합니다.<br>iOS는 애플(Apple)에서 만들었으며 현재 iPhone, iPad, iPod touch 등 많은 모바일 기기에서 사용되는 모바일 운영체제입니다. iOS UI(User Interface)의 특징은 기본적으로 멀티터치 제스처(multi-touch gestures)가 적용이 되어있다는 것입니다. 모바일 운영체제답게 터치스크린을 통해 디바이스와 사용자간의 communication을 가능하도록 한다고 할 수 있습니다.</p>
+<h3 id="iOS-SDK"><a href="#iOS-SDK" class="headerlink" title="iOS SDK"></a>iOS SDK</h3><p>iOS개발을 위해선 iOS SDK가 필요합니다.<br>여기서 SDK란 Software Development Kit의 줄임말로, 소프트웨어 개발을 위한 툴(Tool)들의 모음이라고 할 수 있습니다.<br>SDK는 내부에 있는 툴(Tool)들을 활용하여 어플리케이션을 만들수 있도록 컴퓨터의 하드웨어, 운영체제등의 환경을 맞춰주어 소스가 컴파일되고 실행될 수 있도록 해주는 일련의 작업들을 세팅해주는 역할을 합니다. 흔히 우리가 개발자가 아니더라도 PC에서 Java환경을 이용하기 위해 JDK를 다운받는 것을 볼 수 있는데 JDK가 바로 Java의 SDK인 Java Development Kit 입니다.<br>이 글이 올라갈 iOS카테고리에는 iOS개발에 초점을 맞출 예정이기에 iOS SDK가 앞으로 꼭 필요한 툴 중에 하나라고 할 수 있습니다.<br>iOS SDK는 Mac 유저에게 무료로 제공하고 있으며, Windows에서는 사용할 수 없습니다. 요즘엔 Xcode에 포함되어 함께 Xcode를 설치했다면 자동으로 환경이 갖추어졌다고 할 수 있습니다.</p>
+<h3 id="Playground-플레이그라운드"><a href="#Playground-플레이그라운드" class="headerlink" title="Playground(플레이그라운드)"></a>Playground(플레이그라운드)</h3><p>플레이그라운드는 놀이터라는 뜻 답게 소스코드를 작성하고 실행하면서 간단하고 쉽게 테스트할 수 있는 개발환경이라고 할 수 있습니다.<br>두 개의 Playground가 있는데, Xcode의 Swift 플레이그라운드가 있고, iPad에서 다운받아 사용할 수 있는 Playground 앱이 있습니다.<br>Xcode에서 Playground를 만들면 프로젝트를 만들때처럼 하나의 환경이 세팅이 되며, Swift소스 파일과 파일의 실행을 위한 환경설정파일등이 playground확장자를 가지는 폴더에 포함되어 생성됩니다.<br>장점은 따로 컴파일과 실행과정을 거치지 않고 소스를 수정하면 실시간으로 자동 실행하면서 결과를 보여줍니다.</p>
+<hr>
+<h2 id="프로그래밍-지식"><a href="#프로그래밍-지식" class="headerlink" title="프로그래밍 지식"></a>프로그래밍 지식</h2><h3 id="컴파일과-실행"><a href="#컴파일과-실행" class="headerlink" title="컴파일과 실행"></a>컴파일과 실행</h3><p>컴파일은 프로그래밍 언어를 사용하여 작성한 프로그램 소스파일을 컴퓨터가 인지할 수 있도록 Binary Code(0과 1로 이루어짐)로 변환해주는 작업을 의미합니다.<br>C, Java나 Swift등의 컴파일 언어는 실행하기 전에 컴파일을 해주어야 컴파일된 파일을 컴퓨터가 인식하여 정상적으로 실행이 가능합니다.<br>장점은 컴파일 과정에서 소스의 오류를 쉽게 파악할 수 있으며, 단점은 컴파일 과정이 필요하므로 시간이 더 필요하고 해당 소스가 아니라 컴파일된 소스를 이용하여 동작한다는 생각을 항상 생각해줘야한 다는 것이 있습니다.<br>실행은 프로그램을 동작하도록 하는 작업입니다.<br>프로그램이 동작하기 위해선 하드디스크등에 저장된 소스를 메모리에 올려 CPU에서 처리하는 작업이라고 할 수 있습니다.<br>이에 대한 자세한 설명은 Computer Science 카테고리에 따로 정리할 예정입니다.</p>
+<h3 id="스위프트-Swift"><a href="#스위프트-Swift" class="headerlink" title="스위프트(Swift)"></a>스위프트(Swift)</h3><p>스위프트는 애플에서 개발된 오픈소스 프로그래밍 언어입니다.<br>앞으로 Swift를 위주로 iOS개발에 관한 글을 올릴 예정입니다.</p>
+<h3 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h3><p>프로그래밍을 처음 배울때 필수 코스(?)중 하나인 Hello World 찍기를 해보려면 아래의 소스코드를 작성해보면 됩니다.<br>간단한 실행테스트를 할 것이기에 플레이그라운드를 활용하여 작성할 수 있습니다.<br><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">"Hello, iOS World"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(str)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h4><p>그동안 Java, JavaScript, Python 등을 배우고 앞으로도 사용하긴 할테지만 주 분야를 iOS로 정했고 꾸준히 공부하면서 발전할 것입니다.<br>블로그를 통해 공부한 내용을 공유하며 중간중간 다른언어와의 비교도 해보면서 Swift 및 iOS개발에 대해 함께 토론하고 공부해나가는 공간이 되었으면 좋겠습니다.</p>
+
+        
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://ChocOZerO.github.io/IT/iOS/2017-11-17/iOS를-위한-기본지식/" data-id="cjd6y2y6m000dta88h0e51rss" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://ChocOZerO.github.io/IT/iOS/2017-11-17/iOS를-위한-기본지식/#comments" class="article-comment-link"><span class="fb-comments-count" data-href="https://ChocOZerO.github.io/IT/iOS/2017-11-17/iOS를-위한-기본지식/">0</span>&nbsp;Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/IT/Swift/2018-02-03/Swift-변수와-상수/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    [Swift]변수와 상수
+                
+            </div>
+        </a>
+    
+    
+        <a href="/IT/JavaScript/2017-10-03/JS-함수형프로그래밍/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">[JS]함수형프로그래밍</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+      
+    <div class="fb-comments" data-width="100%" data-href="https://ChocOZerO.github.io/IT/iOS/2017-11-17/iOS를-위한-기본지식/" data-num-posts="5"></div>
+
+
+    
+    </section>
+
+
+
+            </section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Swift/">Swift</a></p>
+                            <p class="item-title"><a href="/IT/Swift/2018-02-03/Swift-변수와-상수/" class="title">[Swift]변수와 상수</a></p>
+                            <p class="item-date"><time datetime="2018-02-03T05:50:02.000Z" itemprop="datePublished">2018-02-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/IT/iOS/2017-11-17/iOS를-위한-기본지식/" class="title">iOS를 위한 기본지식</a></p>
+                            <p class="item-date"><time datetime="2017-11-16T16:38:29.000Z" itemprop="datePublished">2017-11-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/JavaScript/">JavaScript</a></p>
+                            <p class="item-title"><a href="/IT/JavaScript/2017-10-03/JS-함수형프로그래밍/" class="title">[JS]함수형프로그래밍</a></p>
+                            <p class="item-date"><time datetime="2017-10-03T08:25:02.000Z" itemprop="datePublished">2017-10-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Data-Science/">Data-Science</a></p>
+                            <p class="item-title"><a href="/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/" class="title">인공지능-머신러닝-맛보기04</a></p>
+                            <p class="item-date"><time datetime="2017-10-02T14:50:22.000Z" itemprop="datePublished">2017-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Data-Science/">Data-Science</a></p>
+                            <p class="item-title"><a href="/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/" class="title">인공지능-머신러닝-맛보기03</a></p>
+                            <p class="item-date"><time datetime="2017-09-24T15:07:03.000Z" itemprop="datePublished">2017-09-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Computer-Science/">Computer-Science</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Data-Science/">Data-Science</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Swift/">Swift</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/iOS/">iOS</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS/">CS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DS/">DS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Science/">Data-Science</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/">Exception</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FP/">FP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/">ML</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playground/">Playground</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/머신러닝/">머신러닝</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/인공지능/">인공지능</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/함수형프로그래밍/">함수형프로그래밍</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/DS/" style="font-size: 20px;">DS</a> <a href="/tags/Data-Science/" style="font-size: 20px;">Data-Science</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Exception/" style="font-size: 10px;">Exception</a> <a href="/tags/FP/" style="font-size: 10px;">FP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/ML/" style="font-size: 20px;">ML</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/데이터베이스/" style="font-size: 10px;">데이터베이스</a> <a href="/tags/머신러닝/" style="font-size: 20px;">머신러닝</a> <a href="/tags/인공지능/" style="font-size: 20px;">인공지능</a> <a href="/tags/함수형프로그래밍/" style="font-size: 10px;">함수형프로그래밍</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Taehyeon Jake LEE<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

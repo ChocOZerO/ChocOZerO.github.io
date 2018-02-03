@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>인공지능-머신러닝-맛보기03 | ChocOZerO&#39;s Learning Pad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="아래의 글은 elice(엘리스) 에서 진행한 인공지능/머신러닝 맛보기 수업을 듣고 개인 공부를 목적으로 정리한 글입니다.학습자료가 따로 있기에 그림이나 예제등 자세한 내용 없이 키워드와 기억하고 싶은 내용, 궁금해서 따로 검색해 놓은 내용만 적어놓은 것임을 밝힙니다.  비지도 학습 개론(Introduction to Unsupervised Learning)답">
+<meta name="keywords" content="Data-Science,DS,AI,ML,인공지능,머신러닝">
+<meta property="og:type" content="article">
+<meta property="og:title" content="인공지능-머신러닝-맛보기03">
+<meta property="og:url" content="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/index.html">
+<meta property="og:site_name" content="ChocOZerO&#39;s Learning Pad">
+<meta property="og:description" content="아래의 글은 elice(엘리스) 에서 진행한 인공지능/머신러닝 맛보기 수업을 듣고 개인 공부를 목적으로 정리한 글입니다.학습자료가 따로 있기에 그림이나 예제등 자세한 내용 없이 키워드와 기억하고 싶은 내용, 궁금해서 따로 검색해 놓은 내용만 적어놓은 것임을 밝힙니다.  비지도 학습 개론(Introduction to Unsupervised Learning)답">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-02-01T15:39:03.039Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="인공지능-머신러닝-맛보기03">
+<meta name="twitter:description" content="아래의 글은 elice(엘리스) 에서 진행한 인공지능/머신러닝 맛보기 수업을 듣고 개인 공부를 목적으로 정리한 글입니다.학습자료가 따로 있기에 그림이나 예제등 자세한 내용 없이 키워드와 기억하고 싶은 내용, 궁금해서 따로 검색해 놓은 내용만 적어놓은 것임을 밝힙니다.  비지도 학습 개론(Introduction to Unsupervised Learning)답">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-97783885-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-5586917880991745",
+	enable_page_level_ads: true
+    });
+</script>
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">ChocOZerO&#39;s Learning Pad</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/resume">Resume</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/boarder.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/resume">Resume</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/boarder.png" />
+            <h2 id="name">Taehyeon Jake LEE</h2>
+            <h3 id="title">iOS Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Seoul, Korea</span>
+            <a id="follow" target="_blank" href="https://github.com/ChocOZerO/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                10
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                21
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/ChocOZerO" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/ChocOZerO" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/TH.Jake.Lee" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.instagram.com/chocozero/" target="_blank" title="instagram" class=tooltip>
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="linkein" class=tooltip>
+                            <i class="fa fa-linkein"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main">
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+                <article id="post-인공지능-머신러닝-맛보기03" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            인공지능-머신러닝-맛보기03
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/">
+            <time datetime="2017-09-24T15:07:03.000Z" itemprop="datePublished">2017-09-25</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Data-Science/">Data-Science</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/AI/">AI</a>, <a class="tag-link" href="/tags/DS/">DS</a>, <a class="tag-link" href="/tags/Data-Science/">Data-Science</a>, <a class="tag-link" href="/tags/ML/">ML</a>, <a class="tag-link" href="/tags/머신러닝/">머신러닝</a>, <a class="tag-link" href="/tags/인공지능/">인공지능</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>아래의 글은 <a href="https://academy.elice.io" target="_blank" rel="noopener">elice(엘리스)</a> 에서 진행한 <strong>인공지능/머신러닝 맛보기</strong> 수업을 듣고 개인 공부를 목적으로 정리한 글입니다.<br>학습자료가 따로 있기에 그림이나 예제등 자세한 내용 없이 키워드와 기억하고 싶은 내용, 궁금해서 따로 검색해 놓은 내용만 적어놓은 것임을 밝힙니다.</p>
+<hr>
+<h1 id="비지도-학습-개론-Introduction-to-Unsupervised-Learning"><a href="#비지도-학습-개론-Introduction-to-Unsupervised-Learning" class="headerlink" title="비지도 학습 개론(Introduction to Unsupervised Learning)"></a>비지도 학습 개론(Introduction to Unsupervised Learning)</h1><p>답이 정해져 있지 않은 데이터에서 숨겨진 구조(Latent Structure)를 파악<br>데이터 포인트들은 비슷한 것들끼리 뭉쳐있다 -&gt; Hard Clustering<br>한 개의 데이터 포인트는 숨겨진 클러스터들의 결합이다. -&gt; Soft Clustering</p>
+<h2 id="Hard-Clustering"><a href="#Hard-Clustering" class="headerlink" title="Hard Clustering"></a>Hard Clustering</h2><ul>
+<li>Hierarchical Clustering</li>
+<li>K-Means</li>
+<li>DBSCAN</li>
+<li>OPTICS</li>
+</ul>
+<h2 id="Soft-Clustering"><a href="#Soft-Clustering" class="headerlink" title="Soft Clustering"></a>Soft Clustering</h2><ul>
+<li>Topic Models</li>
+<li>FCM</li>
+<li>Gaussian Mixture Models(EM)</li>
+<li>Soft K-Means</li>
+</ul>
+<hr>
+<h3 id="Hard-Clustering-1"><a href="#Hard-Clustering-1" class="headerlink" title="Hard Clustering"></a>Hard Clustering</h3><p>목표 : 비슷한 데이터 포인트끼리 모은다<br>일반적으로는 완벽한 방법은 없다.</p>
+<ol>
+<li>눈으로 확인</li>
+<li>모델이 데이터를 얼마나 잘 설명하는가<ul>
+<li>Elbow method</li>
+<li>Silhouette method</li>
+<li>Gap staticstic method</li>
+</ul>
+</li>
+</ol>
+<p>고려할 것들</p>
+<ul>
+<li>데이터의 특성<ul>
+<li>어떻게 만들어진 데이터인가?</li>
+<li>데이터 포인트 외 다른 Feature</li>
+</ul>
+</li>
+<li>분석 결과로 얻고자 하는 것<ul>
+<li>고양이 vs 개 분류</li>
+<li>사람들의 행동 분석</li>
+<li>가격 대비 효율성 분석</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="PCA-차원-축소"><a href="#PCA-차원-축소" class="headerlink" title="PCA 차원 축소"></a>PCA 차원 축소</h1><h2 id="PCA란"><a href="#PCA란" class="headerlink" title="PCA란?"></a>PCA란?</h2><p>주 성분 분석<br>Principal Component Analysis(PCA)<br>데이터를 최대한 덜 잃도록 해야한다.<br>투사했을때 분산이 가장 커지는 방향</p>
+<p>고차원 데이터 다루기<br>N차원 데이터 집합에 대해 최대 N개의 서로 수직인 주성분 벡터를 발견할 수 있음<br>첫 번째 주성분은 그 방향으로 데이터들의 분산이 가장 큰<br>두 번째 주성분은 그 다음으로 가장 분산이 큰 축<br>…<br>N 번째 주성분은 그 다음으로 가장 분산이 큰 축</p>
+<h2 id="PCA-왜-사용하는가"><a href="#PCA-왜-사용하는가" class="headerlink" title="PCA 왜 사용하는가?"></a>PCA 왜 사용하는가?</h2><ol>
+<li>고차원의 데이터를 저차원으로 줄인다.(예: 시각화)</li>
+<li>데이터 정제</li>
+</ol>
+<ul>
+<li>차원의 저주(Curse of Dimensionality)<br>차원이 하나 많아질 수록 표현할 수 있는 데이터의 종류는 기하급수적으로 늘어난다.<br>해당 공간의 부피는 기하급수적으로 증가<br>데이터의 밀도가 그만큼 희박해진다 =&gt; 더 많은 데이터가 필요해진다.</li>
+<li>솔루션 : 핵심이 되는 정보를 유지한 채 차원을 낮춰서 데이터의 밀도를 높이는 것</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sklearn.decomposition</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_PCA</span><span class="params">(X, num_components)</span>:</span></span><br><span class="line">    <span class="string">'''scikit-learn'''</span></span><br><span class="line">    pca = sklearn.decomposition.PCA(n_components=num_components)</span><br><span class="line">    pca.fit(X)</span><br><span class="line">    pca_array = pca.transform(X)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pca, pca_array</span><br></pre></td></tr></table></figure>
+<p>위의 코드가 PCA를 구현한것.<br>N차원을 num_components차원으로 줄여준다.<br>scikit-learn을 활용.</p>
+<h3 id="데이터-표준화"><a href="#데이터-표준화" class="headerlink" title="데이터 표준화"></a>데이터 표준화</h3><p>표준화(Normalization)는 여러 뜻을 가지고 있다.<br>이번엔 데이터를 [0..1]의 범위로 조정하는 것을 의미<br>이유는 스케일(Scale) 따라 주성분의 방향이 바뀌기 때문에 모든 특성(Attribute)의 스케일을 같게 할 필요가 있다.</p>
+<hr>
+<h1 id="K-means-클러스터링"><a href="#K-means-클러스터링" class="headerlink" title="K-means 클러스터링"></a>K-means 클러스터링</h1><p><strong>반복을 이용한 클러스터링 알고리즘</strong></p>
+<ol>
+<li>중심 Centroid : 각 클러스터의 “중심”을 의미</li>
+<li>중심과의 거리 distance : 중심과 데이터 포인트와의 거리</li>
+</ol>
+<h2 id="K-means-Step"><a href="#K-means-Step" class="headerlink" title="K-means Step"></a>K-means Step</h2><ol>
+<li>초기 중심값은 데이터 중 임의로 선정</li>
+<li>두개의 중심점과 각각의 다른 점들과의 거리를 구해서 거리가 가까운쪽의 중심점의 그룹으로 분류한다.</li>
+<li>형성된 그룹(클러스터)에서 중심점을 다시 계산한다. 여러가지 방식이 있지만 오리지널은 포인터 위치의 무게중심값으로 정한다.(평균으로 하기도 한다)</li>
+<li>다시 각각의 데이터 포인트에 대해 위에서 계산된 중심점과의 거리를 구해 가까운 중심점을 찾는다.</li>
+<li>모든 데이터 포인트에 대해 가장 가까운 클러스터를 할당한다.</li>
+<li>데이터 포인트의 클러스터 할당이 새로 진행되지 않을때가지 3번부터 반복한다.</li>
+</ol>
+<h2 id="K-means의-문제점"><a href="#K-means의-문제점" class="headerlink" title="K-means의 문제점"></a>K-means의 문제점</h2><p>빠르고 강력한 만큼 문제점이 존재한다.</p>
+<ol>
+<li>K(클러스터 개수)값에 따라 결과값이 완전히 달라진다.</li>
+<li>초기값에 예민하게 반응한다.</li>
+<li>비구형 클러스터에서 잘 동작하지 못한다.</li>
+</ol>
+<h3 id="위의-문제점에-따른-해결책"><a href="#위의-문제점에-따른-해결책" class="headerlink" title="위의 문제점에 따른 해결책"></a>위의 문제점에 따른 해결책</h3><ol>
+<li><p>여러 K값을 시도해본다.<br>이것을 체크하기 위한 알고리즘 : 실루엣<br>Silhouette: 모든 데이터 포인트가 클러스터에 얼마나 잘 분류되었는가를 수치화하는것.<br>A : 한 데이터와 같은 클러스터내 다른 포인트 사이의 평균 거리<br>B : 이 데이터와 이웃 클러스터 내 다른 포인트 사이의 평균거리<br>A &lt;&lt;&lt; B 일수록 좋은것.</p>
+</li>
+<li><p>다른 초기값과 함께 알고리즘을 반복 실행<br>최고의 silhouette 점수를 가진 클러스터를 선택</p>
+</li>
+<li><p>다른 알고리즘을 사용한다.</p>
+</li>
+</ol>
+<hr>
+<h2 id="문서-벡터화"><a href="#문서-벡터화" class="headerlink" title="문서 벡터화"></a>문서 벡터화</h2><ol>
+<li>정제<br>Bag of Words 모델을 단어 순서가 있는 1차원 벡터로 변환하는 과정(단어순서는 아무렇게나)</li>
+<li>전체 데이터에서 단어 카운트</li>
+<li>전체 데이터에서 50개 미만인 단어는 제거</li>
+<li>전체 데이터에서 50개 이상인 각 단어에 인덱스 할당</li>
+<li>문서 내에서 인덱스가 있는 단어의 단어 카운트</li>
+</ol>
+<hr>
+<h2 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h2><p>인공지능&amp;머신러닝을 공부하며 다시한번 느낀건데 파이썬 라이브러리들은 정말 대단한 것 같습니다. 파이썬이 왜 데이터 사이언스에서 중요해졌는지를 느끼게된 시간이었습니다.<br>이번 시간에선 고차원의 데이터를 시각화를 위해 저차원으로 줄이는 과정이 무척 인상적이었습니다. 간단히 라이브러리를 불러와서 적용하고, 처리한 데이터들을 조합해서 원하는 결과물을 만들어내는 과정을 보면 레고가 연상됩니다.<br>이는 데이터 사이언스라는 학문의 특성인것 같습니다.<br>개발자는 새로운 알고리즘을 만들거나 코드 하나하나 의미를 부여하며 더 나은 성능을 위해 노력한다면, 데이터 사이언티스트는 라이브러리들을 활용해 데이터를 분석하고 다양한 예측모델을 만들어내는 노력이 필요한 것 같습니다.<br>결국 원하는 것이 무엇이고, 목표를 위해 주어진 재료가 무엇이며, 어떻게 효율적으로 활용할 것인가 하는 문제를 끊임없이 생각하고, 더 나은 선택을 위해 지식과 경험을 넓혀 나가야겠다는 다짐을 했습니다.</p>
+
+        
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/" data-id="cjd6y2y6x000nta88cgblj7ej" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/#comments" class="article-comment-link"><span class="fb-comments-count" data-href="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/">0</span>&nbsp;Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    인공지능-머신러닝-맛보기04
+                
+            </div>
+        </a>
+    
+    
+        <a href="/IT/Data-Science/2017-09-23/인공지능-머신러닝-맛보기02/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">인공지능-머신러닝-맛보기02</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+      
+    <div class="fb-comments" data-width="100%" data-href="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/" data-num-posts="5"></div>
+
+
+    
+    </section>
+
+
+
+            </section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Swift/">Swift</a></p>
+                            <p class="item-title"><a href="/IT/Swift/2018-02-03/Swift-변수와-상수/" class="title">[Swift]변수와 상수</a></p>
+                            <p class="item-date"><time datetime="2018-02-03T05:50:02.000Z" itemprop="datePublished">2018-02-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/IT/iOS/2017-11-17/iOS를-위한-기본지식/" class="title">iOS를 위한 기본지식</a></p>
+                            <p class="item-date"><time datetime="2017-11-16T16:38:29.000Z" itemprop="datePublished">2017-11-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/JavaScript/">JavaScript</a></p>
+                            <p class="item-title"><a href="/IT/JavaScript/2017-10-03/JS-함수형프로그래밍/" class="title">[JS]함수형프로그래밍</a></p>
+                            <p class="item-date"><time datetime="2017-10-03T08:25:02.000Z" itemprop="datePublished">2017-10-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Data-Science/">Data-Science</a></p>
+                            <p class="item-title"><a href="/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/" class="title">인공지능-머신러닝-맛보기04</a></p>
+                            <p class="item-date"><time datetime="2017-10-02T14:50:22.000Z" itemprop="datePublished">2017-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Data-Science/">Data-Science</a></p>
+                            <p class="item-title"><a href="/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/" class="title">인공지능-머신러닝-맛보기03</a></p>
+                            <p class="item-date"><time datetime="2017-09-24T15:07:03.000Z" itemprop="datePublished">2017-09-25</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Computer-Science/">Computer-Science</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Data-Science/">Data-Science</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Swift/">Swift</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/iOS/">iOS</a><span class="category-list-count">1</span></li></ul></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS/">CS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DS/">DS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Science/">Data-Science</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/">Exception</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FP/">FP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/">ML</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playground/">Playground</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/머신러닝/">머신러닝</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/인공지능/">인공지능</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/함수형프로그래밍/">함수형프로그래밍</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/AI/" style="font-size: 20px;">AI</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/DS/" style="font-size: 20px;">DS</a> <a href="/tags/Data-Science/" style="font-size: 20px;">Data-Science</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Exception/" style="font-size: 10px;">Exception</a> <a href="/tags/FP/" style="font-size: 10px;">FP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/ML/" style="font-size: 20px;">ML</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/Xcode/" style="font-size: 10px;">Xcode</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 15px;">iOS</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/데이터베이스/" style="font-size: 10px;">데이터베이스</a> <a href="/tags/머신러닝/" style="font-size: 20px;">머신러닝</a> <a href="/tags/인공지능/" style="font-size: 20px;">인공지능</a> <a href="/tags/함수형프로그래밍/" style="font-size: 10px;">함수형프로그래밍</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Taehyeon Jake LEE<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
