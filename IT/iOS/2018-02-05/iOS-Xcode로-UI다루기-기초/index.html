@@ -19,7 +19,8 @@
 <meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_drag.png">
 <meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_choose.png">
 <meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_made.png">
-<meta property="og:updated_time" content="2018-02-05T07:03:42.000Z">
+<meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/target-action.png">
+<meta property="og:updated_time" content="2018-02-05T08:40:09.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[iOS]Xcode로 UI다루기 기초">
 <meta name="twitter:description" content="이 글은 iOS앱 개발시 필요한 기본적인 UI를 다룰 수 있는 지식을 공부하면서 정리했습니다.사진 및 주 내용은 Xcode 9 기반 애플 공식 문서를 참고하였습니다. Xcode, Storyboard먼저 아래의 내용을 설명하기에 앞서 UI가 무엇인지부터 간단히 정리하겠습니다.  UI : User Interface의 약어이며, 사용자와의 접점을 뜻한다.즉, 사">
@@ -310,6 +311,9 @@ ga('send', 'pageview');
 <p>아래의 사진은 Button과 Label을 각각 IBAction과 IBOutlet에 매핑시킨 결과입니다.</p>
 <img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_made.png" title="gs connection made">
 <p>IBOutlet과 IBAction은 Connection 타입 중 하나로 각각 프로퍼티와 메소드로 생성되어 화면 요소들을 컨트롤 할 수 있는 연결고리가 되는 것입니다.<br>이렇게 설정해놓은 경우 내부에 구현되어 있는 코드에 의해 Interface Builder기능이 적용되어 자동으로 화면 요소와 소스코드가 매핑되어 간단히 접근이 가능하다고 생각하면 됩니다.</p>
+<p>여기서 한가지 짚고 넘어야할 부분은 IBOutlet과 IBAction은 똑같이 View(화면-Storyboard)와 Controller를 매핑시켜주지만 역할은 다릅니다.</p>
+<img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/target-action.png" title="target-action">
+<p>위 그림처럼 IBAction의 경우 유저(사용자)를 통한 특정 이벤트를 감지해서 Controller에 알리는 역할을 하고, IBOutlet은 처리 결과를 View단에 알려서 원하는 동작을 이끌어 냅니다.</p>
 <h3 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h3><p>iOS의 UI를 다루는 방법은 Storyboard와 Interface Builder를 활용하는 방법만 존재하는 것은 아닙니다.<br>위의 방법은 개발시에도 눈으로 확인해가면서 편리하게 작업하도록 제공해주는 방식입니다.<br>다른 방법으로는 소스코드를 활용해 직접 UI를 다루는 방법이 있습니다. 이 경우엔 Storyboard와의 연결고리가 필요하지 않기 때문에 IBOutlet이나 IBAction등의 프로퍼티 혹은 메소드 없이 직접 각 필요한 기능을 포함하는 Protocol을 채택하여 처리할 수 있습니다.</p>
 <p>두 경우 모두 사용하기 때문에 항상 둘 다 연습하고 잘 알고 있어야 합니다.<br>소스 코드를 활용하는 경우는 앞으로 다른 포스트를 통해 자주 등장할 예정이기에 이 글에선 Storyboard의 기초적인 활용 방법인 위의 내용을 끝으로 마치겠습니다.</p>
 
@@ -333,7 +337,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/" data-id="cjd9veqj1000alh4oxjnwsirz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/" data-id="cjd9yuwyi000dlt4okj6kzdfw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
