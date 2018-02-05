@@ -3,18 +3,27 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2017/8 | ChocOZerO&#39;s Learning Pad</title>
+    <title>[iOS]Xcode로 UI다루기 기초 | ChocOZerO&#39;s Learning Pad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="IT Blog powered by Hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ChocOZerO&#39;s Learning Pad">
-<meta property="og:url" content="https://ChocOZerO.github.io/archives/2017/08/index.html">
+    <meta name="description" content="이 글은 iOS앱 개발시 필요한 기본적인 UI를 다룰 수 있는 지식을 공부하면서 정리했습니다.사진 및 주 내용은 Xcode 9 기반 애플 공식 문서를 참고하였습니다. Xcode, Storyboard먼저 아래의 내용을 설명하기에 앞서 UI가 무엇인지부터 간단히 정리하겠습니다.  UI : User Interface의 약어이며, 사용자와의 접점을 뜻한다.즉, 사">
+<meta name="keywords" content="iOS,Xcode,UI,Storyboard">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[iOS]Xcode로 UI다루기 기초">
+<meta property="og:url" content="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/index.html">
 <meta property="og:site_name" content="ChocOZerO&#39;s Learning Pad">
-<meta property="og:description" content="IT Blog powered by Hexo">
+<meta property="og:description" content="이 글은 iOS앱 개발시 필요한 기본적인 UI를 다룰 수 있는 지식을 공부하면서 정리했습니다.사진 및 주 내용은 Xcode 9 기반 애플 공식 문서를 참고하였습니다. Xcode, Storyboard먼저 아래의 내용을 설명하기에 앞서 UI가 무엇인지부터 간단히 정리하겠습니다.  UI : User Interface의 약어이며, 사용자와의 접점을 뜻한다.즉, 사">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/IB_overview.png">
+<meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/IB_add_view.png">
+<meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/AUI_device_pane_iOS.png">
+<meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_drag.png">
+<meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_choose.png">
+<meta property="og:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_made.png">
+<meta property="og:updated_time" content="2018-02-05T07:03:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ChocOZerO&#39;s Learning Pad">
-<meta name="twitter:description" content="IT Blog powered by Hexo">
+<meta name="twitter:title" content="[iOS]Xcode로 UI다루기 기초">
+<meta name="twitter:description" content="이 글은 iOS앱 개발시 필요한 기본적인 UI를 다룰 수 있는 지식을 공부하면서 정리했습니다.사진 및 주 내용은 Xcode 9 기반 애플 공식 문서를 참고하였습니다. Xcode, Storyboard먼저 아래의 내용을 설명하기에 앞서 UI가 무엇인지부터 간단히 정리하겠습니다.  UI : User Interface의 약어이며, 사용자와의 접점을 뜻한다.즉, 사">
+<meta name="twitter:image" content="https://chocozero.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/IB_overview.png">
     
 
     
@@ -239,86 +248,192 @@ ga('send', 'pageview');
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                <div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+                <article id="post-iOS-Xcode로-UI다루기-기초" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/IT/Java/2017-08-31/Exception-처리/">Exception-처리</a>
+        <h1 class="article-title" itemprop="name">
+            [iOS]Xcode로 UI다루기 기초
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/IT/Java/2017-08-31/Exception-처리/">
-            <time datetime="2017-08-30T18:16:28.000Z" itemprop="datePublished">2017-08-31</time>
+        <a href="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/">
+            <time datetime="2018-02-05T07:00:43.000Z" itemprop="datePublished">2018-02-05</time>
         </a>
     </div>
 
 
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Java/">Java</a>
+        <a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/iOS/">iOS</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Exception/">Exception</a>, <a class="tag-link" href="/tags/Java/">Java</a>
+        <a class="tag-link" href="/tags/Storyboard/">Storyboard</a>, <a class="tag-link" href="/tags/UI/">UI</a>, <a class="tag-link" href="/tags/Xcode/">Xcode</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/Diary/2017-08-03/Blog-시작/">Blog-시작</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>이 글은 iOS앱 개발시 필요한 기본적인 UI를 다룰 수 있는 지식을 공부하면서 정리했습니다.<br>사진 및 주 내용은 Xcode 9 기반 <a href="http://help.apple.com/xcode/mac/9.3/#/dev1a26b4fb4" target="_blank" rel="noopener">애플 공식 문서</a>를 참고하였습니다.</p>
+<h2 id="Xcode-Storyboard"><a href="#Xcode-Storyboard" class="headerlink" title="Xcode, Storyboard"></a>Xcode, Storyboard</h2><p>먼저 아래의 내용을 설명하기에 앞서 UI가 무엇인지부터 간단히 정리하겠습니다.</p>
+<blockquote>
+<p>UI : User Interface의 약어이며, 사용자와의 접점을 뜻한다.<br>즉, 사용자가 보는 화면을 정의한다고 생각하면 됩니다.</p>
+</blockquote>
+<p>iOS 앱의 UI에 화면 요소들을 간단하게 컨트롤 하기 위해서 Apple은 Interface Builder라는 것을 제공하고 있습니다.<br>바로 오늘의 주인공 스토리보드(Storyboard)가 그 역할을 하고 있습니다.<br>UI를 변경하거나 확인하기 위해선 위에 말한 스토리보드파일을 열어야 합니다.<br>기본적으로 프로젝트를 생성하면 자동으로 생기는 Main.storyboard와 LaunchScreen.storyboard가 바로 스토리보드 파일입니다.<br>LaunchScreen.storyboard의 경우 앱이 처음 실행될때(Launching)뜨는 화면으로 그 화면의 UI를 변경하거나 확인할때 사용하면 됩니다.<br>그 외엔 Main.storyboard를 이용하면 됩니다. 아래 사진을 통해 기본적인 UI화면과 Xcode 에서 어느 위치에 있는지 확인할 수 있습니다.</p>
+<img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/IB_overview.png" title="IB overview">
+<p>위 사진에 명시되어 있는 명칭은 후에 구글링이나 커뮤니케이션을 할때 필요한 부분이니 잘 기억하시기 바랍니다.</p>
+<p>기본화면에서 버튼을 추가해보겠습니다.</p>
+<img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/IB_add_view.png" title="IB add view">
+<p>화면에 버튼을 추가하는 방법은 위의 사진을 토대로 Object library에서 버튼을 드래그해 원하는 곳에 배치시키면 간단히 성공하실 수 있습니다.<br>혹시 화면의 방향을 바꾸거나 여러 기기에 대응하는 화면을 확인해보고 싶다면 아래에 <code>[View as: 기기명]</code>이라고 씌여져 있는 <code>Device configuration controls</code> 부분을 클릭하면 아래와 같은 화면이 나타나기 때문에 다양하게 변경하면서 확인할 수 있습니다.</p>
+<img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/AUI_device_pane_iOS.png" title="AUI device pane iOS">
+<h3 id="IBOutlet-IBAction"><a href="#IBOutlet-IBAction" class="headerlink" title="IBOutlet, IBAction"></a>IBOutlet, IBAction</h3><p>위에 간단히 버튼을 추가하고 다양한 기기에서 표현되는 것을 확인해보았지만 실제 프로그래밍을 할 때는 지금 당장 소스(코드)에서 해당 버튼에 접근할 수 있는 방법이 없습니다.<br>이유는 소스(코드)들과 UI가 현재는 따로 구분되어 있기 때문입니다.<br>이때는 Storyboard의 Interface Builder기능을 활용해야 합니다.<br>방법은 간단합니다. 아래의 사진처럼 해당 버튼 혹은 텍스트나 다른 화면 요소들을 원하는 Controller클래스가 있는 부분에 컨트롤(Ctrl)을 누른채 드래그 해서 올려놓기만 하면 자동으로 처리가 됩니다.</p>
+<img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_drag.png" title="gs connection drag">
+<p>한가지 마무리 작업으로 <code>Ctrl + 드래그</code>를 마친순간 아래와 같은 팝업창이 뜨는데 해당 팝업창에 원하는 Connection 타입과 Name(프로퍼티 이름) 그리고 Type(프로퍼티의 타입)을 정의해줘야 합니다.</p>
+<img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_choose.png" title="gs connection choose">
+<p>아래의 사진은 Button과 Label을 각각 IBAction과 IBOutlet에 매핑시킨 결과입니다.</p>
+<img src="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/gs_connection_made.png" title="gs connection made">
+<p>IBOutlet과 IBAction은 Connection 타입 중 하나로 각각 프로퍼티와 메소드로 생성되어 화면 요소들을 컨트롤 할 수 있는 연결고리가 되는 것입니다.<br>이렇게 설정해놓은 경우 내부에 구현되어 있는 코드에 의해 Interface Builder기능이 적용되어 자동으로 화면 요소와 소스코드가 매핑되어 간단히 접근이 가능하다고 생각하면 됩니다.</p>
+<h3 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h3><p>iOS의 UI를 다루는 방법은 Storyboard와 Interface Builder를 활용하는 방법만 존재하는 것은 아닙니다.<br>위의 방법은 개발시에도 눈으로 확인해가면서 편리하게 작업하도록 제공해주는 방식입니다.<br>다른 방법으로는 소스코드를 활용해 직접 UI를 다루는 방법이 있습니다. 이 경우엔 Storyboard와의 연결고리가 필요하지 않기 때문에 IBOutlet이나 IBAction등의 프로퍼티 혹은 메소드 없이 직접 각 필요한 기능을 포함하는 Protocol을 채택하여 처리할 수 있습니다.</p>
+<p>두 경우 모두 사용하기 때문에 항상 둘 다 연습하고 잘 알고 있어야 합니다.<br>소스 코드를 활용하는 경우는 앞으로 다른 포스트를 통해 자주 등장할 예정이기에 이 글에선 Storyboard의 기초적인 활용 방법인 위의 내용을 끝으로 마치겠습니다.</p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/Diary/2017-08-03/Blog-시작/">
-            <time datetime="2017-08-02T15:45:48.000Z" itemprop="datePublished">2017-08-03</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Diary/">Diary</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/icarus/">icarus</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/" data-id="cjd9veqj1000alh4oxjnwsirz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/#comments" class="article-comment-link"><span class="fb-comments-count" data-href="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/">0</span>&nbsp;Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/IT/iOS/2018-02-05/iOS-프로젝트-템플릿/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">[iOS]프로젝트 템플릿</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+      
+    <div class="fb-comments" data-width="100%" data-href="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/" data-num-posts="5"></div>
+
+
+    
+    </section>
+
+
 
             </section>
             
