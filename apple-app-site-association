@@ -1,0 +1,20 @@
+{
+    "webcredentials": {
+        "apps": [
+            "BDN7AN3DGA.com.yanolja.motel"
+        ]
+    },
+    "applinks": {
+        "apps": [
+            "BDN7AN3DGA.com.yanolja.motel"
+        ],
+        "details": [
+            {
+                "appID": "BDN7AN3DGA.com.yanolja.motel",
+                "paths": [
+                    "*"
+                ]
+            }
+        ]
+    }
+}
