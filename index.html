@@ -8,7 +8,7 @@
     <meta name="description" content="IT Blog powered by Hexo">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ChocOZerO&#39;s Learning Pad">
-<meta property="og:url" content="https://ChocOZerO.github.io/">
+<meta property="og:url" content="https://ChocOZerO.github.io/index.html">
 <meta property="og:site_name" content="ChocOZerO&#39;s Learning Pad">
 <meta property="og:description" content="IT Blog powered by Hexo">
 <meta property="og:locale" content="en">
@@ -175,11 +175,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                15
+                16
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                31
+                33
                 <span>tags</span>
             </div>
         </div>
@@ -240,6 +240,180 @@ ga('send', 'pageview');
 </script>
 
                 
+    <article id="post-개발자용-새-맥북-초기-세팅" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/">개발자용 새 맥북 초기 세팅</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/">
+            <time datetime="2020-01-31T13:28:47.000Z" itemprop="datePublished">2020-01-31</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/Diary/">Diary</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/개발자/">개발자</a>, <a class="tag-link" href="/tags/맥북/">맥북</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="개발자가-새-맥북을-받았다면"><a href="#개발자가-새-맥북을-받았다면" class="headerlink" title="개발자가 새 맥북을 받았다면"></a>개발자가 새 맥북을 받았다면</h1><p>이전에 사용하던 맥북에 용량문제가 생겨서 회사에서 새 맥북으로 교체를 받았습니다.<br>개인적으로 시뮬레이터, Xcode 등에서 시스템 용량을 많이 잡아먹기에 256으로는 조금 모자란 것 같습니다.<br>무려 이번에 새로 나온 맥북 16인치형 2019년 모델을 받았습니다.<br><del>메모리랑 CPU도 올려주면 더 좋았을텐데…</del></p>
+<p>새 맥북을 받긴 했는데 이전과 달리 백업으로 전송하기가 꺼려졌습니다.<br>이유는 이전에 가지고 있던 모델이 회사 보안 정책상 카탈리나로 올리지 못하고 모하비 버전으로 사용하고 있었기에 혹시나 발생할 수 있는 충돌도 방지할겸, 오랜만에 새 제품을 쓰니 리프레쉬를 하자는 마음에 하나하나 새롭게 설치하여 사용해보자는 마음을 먹었습니다.</p>
+<p>먼저 회사에서 제공 받은거니까 일을 위해서<del>(돈을 받아야하니까)</del> 가장 필요한 것은 회사 작업에 필요한 세팅이었습니다.</p>
+<ul>
+<li>개발 툴(Xcode, Paw)</li>
+<li>커뮤니티 툴(Slack, Zeplin)</li>
+</ul>
+<p>여기에 개인적인 생산성을 위해 필요한 툴을 설치했습니다.</p>
+<ul>
+<li>iTerm2</li>
+<li>Tower</li>
+<li>Visual Studio Code</li>
+<li>Chrome</li>
+</ul>
+<p>이렇게 하니 일단 회사에서 주어진 일 정도는 해결할 수 있게 되었습니다.</p>
+<p>개인적인 기호를 위해 homebrew, oh-my-zsh을 이용해 iTerm에 테마를 입히고, 자잘한 세팅을 시작합니다.</p>
+<ul>
+<li>ZSH_THEME=”agnoster”</li>
+<li>plugins엔 기본적인 git에 zsh-syntax-highlighting, zsh-autosuggestions, fasd를 추가로 설정해줬습니다.</li>
+</ul>
+<p>저는 vim 으로 작업하는걸 좋아해서 <del>(익숙한 작업들만..)</del> vimrc파일도 세팅을 해줍니다<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">if has(&quot;syntax&quot;)</span><br><span class="line">    syntax on</span><br><span class="line">endif</span><br><span class="line">set autoindent</span><br><span class="line">set cindent</span><br><span class="line">set nu</span><br><span class="line">set hlsearch</span><br><span class="line">set ts=4</span><br><span class="line">set shiftwidth=4</span><br><span class="line">set sw=1</span><br><span class="line">set ruler</span><br><span class="line"></span><br><span class="line">au BufReadPost *</span><br><span class="line">\ if line(&quot;&apos;\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;&apos;\&quot;&quot;) &lt;= line(&quot;$&quot;) |</span><br><span class="line">\ exe &quot;norm g`\&quot;&quot; |</span><br><span class="line">\ endif</span><br><span class="line"></span><br><span class="line">set laststatus=2</span><br><span class="line">set statusline=\ %&lt;%l:%v\ [%P]%=%a\ %h%m%r\ %F\</span><br></pre></td></tr></table></figure></p>
+<p>여기까지 기초 작업을 하니 일단 전 맥북과 환경이 거의 비슷해졌습니다.</p>
+<p>이 글을 쓰려다 보니 필수로 설치해야되는게 기억 납니다.</p>
+<ul>
+<li>node</li>
+<li>hexo</li>
+</ul>
+<p>그 외에 개인적으로 필요한 애플리케이션들이 있습니다.<br>여기까지 읽으신 분들은 느끼셨겠지만 <del>낚이셨습니다.</del> 또 오랜만에 다음 맥북을 받았을 경우 까먹지 않도록 기록을 남겨 놓는 글이었습니다.<br><del>제 블로그도 잘 포스팅 되는지 확인 해야 되거든요</del></p>
+<p>추가로 또 중요하다고 생각되는 것들은 업데이트 될 수 있습니다.</p>
+<p>여러분들의 맥은 어떻게 세팅되었는지 궁금하네요.<br>좋은 애플리케이션이나 생산성 향상을 위한 도구들 많이 추천 바랍니다.</p>
+<p>고맙습니다 :)</p>
+
+        
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://ChocOZerO.github.io/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/" data-id="ck628s790000o59cmfo7fsfxz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://ChocOZerO.github.io/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/#comments" class="article-comment-link"><span class="fb-comments-count" data-href="https://ChocOZerO.github.io/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/">0</span>&nbsp;Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-후기-TDD-참관-후기" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -325,7 +499,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/Diary/2018-08-12/후기-TDD-참관-후기/" data-id="cjkqmex5900120j9gfeaz2nf0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/Diary/2018-08-12/후기-TDD-참관-후기/" data-id="ck628s798001359cmmsdxoay5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -477,7 +651,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/개발지식/2018-08-12/Test-Driven-Development-TDD/" data-id="cjkqmex4t000c0j9g50bdx5yl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/개발지식/2018-08-12/Test-Driven-Development-TDD/" data-id="ck628s78t000c59cmuszn9xqh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -646,7 +820,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-09/iOS-UITabBarController와-UITabBar/" data-id="cjkqmex4w000g0j9gjvtq658z" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-09/iOS-UITabBarController와-UITabBar/" data-id="ck628s78v000f59cmpdmdgm4x" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -813,7 +987,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/" data-id="cjkqmex4x000h0j9g3lz3ktmj" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/" data-id="ck628s78x000g59cmt5sv7g7y" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -972,7 +1146,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-프로젝트-템플릿/" data-id="cjkqmex4z000k0j9g3f5a53xq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/iOS/2018-02-05/iOS-프로젝트-템플릿/" data-id="ck628s78y000j59cm3v6331u1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1155,7 +1329,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/Swift/2018-02-03/Swift-변수와-상수/" data-id="cjkqmex4v000d0j9g3mx13g5u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/Swift/2018-02-03/Swift-변수와-상수/" data-id="ck628s78n000859cml4l0foz3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1310,7 +1484,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/iOS/2017-11-17/iOS를-위한-기본지식/" data-id="cjkqmex50000l0j9gwivdaevw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/iOS/2017-11-17/iOS를-위한-기본지식/" data-id="ck628s78z000k59cm2ccv8spq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1495,7 +1669,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/JavaScript/2017-10-03/JS-함수형프로그래밍/" data-id="cjkqmex4n00090j9g4r3vdgfp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/JavaScript/2017-10-03/JS-함수형프로그래밍/" data-id="ck628s78s000b59cmcbub6utb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1722,7 +1896,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/" data-id="cjkqmex57000z0j9gpzmv5644" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/" data-id="ck628s796001159cm3abzc2nt" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1801,241 +1975,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-인공지능-머신러닝-맛보기03" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/">인공지능-머신러닝-맛보기03</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/">
-            <time datetime="2017-09-24T15:07:03.000Z" itemprop="datePublished">2017-09-25</time>
-        </a>
-    </div>
-
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Data-Science/">Data-Science</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/AI/">AI</a>, <a class="tag-link" href="/tags/DS/">DS</a>, <a class="tag-link" href="/tags/Data-Science/">Data-Science</a>, <a class="tag-link" href="/tags/ML/">ML</a>, <a class="tag-link" href="/tags/머신러닝/">머신러닝</a>, <a class="tag-link" href="/tags/인공지능/">인공지능</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>아래의 글은 <a href="https://academy.elice.io" target="_blank" rel="noopener">elice(엘리스)</a> 에서 진행한 <strong>인공지능/머신러닝 맛보기</strong> 수업을 듣고 개인 공부를 목적으로 정리한 글입니다.<br>학습자료가 따로 있기에 그림이나 예제등 자세한 내용 없이 키워드와 기억하고 싶은 내용, 궁금해서 따로 검색해 놓은 내용만 적어놓은 것임을 밝힙니다.</p>
-<hr>
-<h1 id="비지도-학습-개론-Introduction-to-Unsupervised-Learning"><a href="#비지도-학습-개론-Introduction-to-Unsupervised-Learning" class="headerlink" title="비지도 학습 개론(Introduction to Unsupervised Learning)"></a>비지도 학습 개론(Introduction to Unsupervised Learning)</h1><p>답이 정해져 있지 않은 데이터에서 숨겨진 구조(Latent Structure)를 파악<br>데이터 포인트들은 비슷한 것들끼리 뭉쳐있다 -&gt; Hard Clustering<br>한 개의 데이터 포인트는 숨겨진 클러스터들의 결합이다. -&gt; Soft Clustering</p>
-<h2 id="Hard-Clustering"><a href="#Hard-Clustering" class="headerlink" title="Hard Clustering"></a>Hard Clustering</h2><ul>
-<li>Hierarchical Clustering</li>
-<li>K-Means</li>
-<li>DBSCAN</li>
-<li>OPTICS</li>
-</ul>
-<h2 id="Soft-Clustering"><a href="#Soft-Clustering" class="headerlink" title="Soft Clustering"></a>Soft Clustering</h2><ul>
-<li>Topic Models</li>
-<li>FCM</li>
-<li>Gaussian Mixture Models(EM)</li>
-<li>Soft K-Means</li>
-</ul>
-<hr>
-<h3 id="Hard-Clustering-1"><a href="#Hard-Clustering-1" class="headerlink" title="Hard Clustering"></a>Hard Clustering</h3><p>목표 : 비슷한 데이터 포인트끼리 모은다<br>일반적으로는 완벽한 방법은 없다.</p>
-<ol>
-<li>눈으로 확인</li>
-<li>모델이 데이터를 얼마나 잘 설명하는가<ul>
-<li>Elbow method</li>
-<li>Silhouette method</li>
-<li>Gap staticstic method</li>
-</ul>
-</li>
-</ol>
-<p>고려할 것들</p>
-<ul>
-<li>데이터의 특성<ul>
-<li>어떻게 만들어진 데이터인가?</li>
-<li>데이터 포인트 외 다른 Feature</li>
-</ul>
-</li>
-<li>분석 결과로 얻고자 하는 것<ul>
-<li>고양이 vs 개 분류</li>
-<li>사람들의 행동 분석</li>
-<li>가격 대비 효율성 분석</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="PCA-차원-축소"><a href="#PCA-차원-축소" class="headerlink" title="PCA 차원 축소"></a>PCA 차원 축소</h1><h2 id="PCA란"><a href="#PCA란" class="headerlink" title="PCA란?"></a>PCA란?</h2><p>주 성분 분석<br>Principal Component Analysis(PCA)<br>데이터를 최대한 덜 잃도록 해야한다.<br>투사했을때 분산이 가장 커지는 방향</p>
-<p>고차원 데이터 다루기<br>N차원 데이터 집합에 대해 최대 N개의 서로 수직인 주성분 벡터를 발견할 수 있음<br>첫 번째 주성분은 그 방향으로 데이터들의 분산이 가장 큰<br>두 번째 주성분은 그 다음으로 가장 분산이 큰 축<br>…<br>N 번째 주성분은 그 다음으로 가장 분산이 큰 축</p>
-<h2 id="PCA-왜-사용하는가"><a href="#PCA-왜-사용하는가" class="headerlink" title="PCA 왜 사용하는가?"></a>PCA 왜 사용하는가?</h2><ol>
-<li>고차원의 데이터를 저차원으로 줄인다.(예: 시각화)</li>
-<li>데이터 정제</li>
-</ol>
-<ul>
-<li>차원의 저주(Curse of Dimensionality)<br>차원이 하나 많아질 수록 표현할 수 있는 데이터의 종류는 기하급수적으로 늘어난다.<br>해당 공간의 부피는 기하급수적으로 증가<br>데이터의 밀도가 그만큼 희박해진다 =&gt; 더 많은 데이터가 필요해진다.</li>
-<li>솔루션 : 핵심이 되는 정보를 유지한 채 차원을 낮춰서 데이터의 밀도를 높이는 것</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sklearn.decomposition</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_PCA</span><span class="params">(X, num_components)</span>:</span></span><br><span class="line">    <span class="string">'''scikit-learn'''</span></span><br><span class="line">    pca = sklearn.decomposition.PCA(n_components=num_components)</span><br><span class="line">    pca.fit(X)</span><br><span class="line">    pca_array = pca.transform(X)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pca, pca_array</span><br></pre></td></tr></table></figure>
-<p>위의 코드가 PCA를 구현한것.<br>N차원을 num_components차원으로 줄여준다.<br>scikit-learn을 활용.</p>
-<h3 id="데이터-표준화"><a href="#데이터-표준화" class="headerlink" title="데이터 표준화"></a>데이터 표준화</h3><p>표준화(Normalization)는 여러 뜻을 가지고 있다.<br>이번엔 데이터를 [0..1]의 범위로 조정하는 것을 의미<br>이유는 스케일(Scale) 따라 주성분의 방향이 바뀌기 때문에 모든 특성(Attribute)의 스케일을 같게 할 필요가 있다.</p>
-<hr>
-<h1 id="K-means-클러스터링"><a href="#K-means-클러스터링" class="headerlink" title="K-means 클러스터링"></a>K-means 클러스터링</h1><p><strong>반복을 이용한 클러스터링 알고리즘</strong></p>
-<ol>
-<li>중심 Centroid : 각 클러스터의 “중심”을 의미</li>
-<li>중심과의 거리 distance : 중심과 데이터 포인트와의 거리</li>
-</ol>
-<h2 id="K-means-Step"><a href="#K-means-Step" class="headerlink" title="K-means Step"></a>K-means Step</h2><ol>
-<li>초기 중심값은 데이터 중 임의로 선정</li>
-<li>두개의 중심점과 각각의 다른 점들과의 거리를 구해서 거리가 가까운쪽의 중심점의 그룹으로 분류한다.</li>
-<li>형성된 그룹(클러스터)에서 중심점을 다시 계산한다. 여러가지 방식이 있지만 오리지널은 포인터 위치의 무게중심값으로 정한다.(평균으로 하기도 한다)</li>
-<li>다시 각각의 데이터 포인트에 대해 위에서 계산된 중심점과의 거리를 구해 가까운 중심점을 찾는다.</li>
-<li>모든 데이터 포인트에 대해 가장 가까운 클러스터를 할당한다.</li>
-<li>데이터 포인트의 클러스터 할당이 새로 진행되지 않을때가지 3번부터 반복한다.</li>
-</ol>
-<h2 id="K-means의-문제점"><a href="#K-means의-문제점" class="headerlink" title="K-means의 문제점"></a>K-means의 문제점</h2><p>빠르고 강력한 만큼 문제점이 존재한다.</p>
-<ol>
-<li>K(클러스터 개수)값에 따라 결과값이 완전히 달라진다.</li>
-<li>초기값에 예민하게 반응한다.</li>
-<li>비구형 클러스터에서 잘 동작하지 못한다.</li>
-</ol>
-<h3 id="위의-문제점에-따른-해결책"><a href="#위의-문제점에-따른-해결책" class="headerlink" title="위의 문제점에 따른 해결책"></a>위의 문제점에 따른 해결책</h3><ol>
-<li><p>여러 K값을 시도해본다.<br>이것을 체크하기 위한 알고리즘 : 실루엣<br>Silhouette: 모든 데이터 포인트가 클러스터에 얼마나 잘 분류되었는가를 수치화하는것.<br>A : 한 데이터와 같은 클러스터내 다른 포인트 사이의 평균 거리<br>B : 이 데이터와 이웃 클러스터 내 다른 포인트 사이의 평균거리<br>A &lt;&lt;&lt; B 일수록 좋은것.</p>
-</li>
-<li><p>다른 초기값과 함께 알고리즘을 반복 실행<br>최고의 silhouette 점수를 가진 클러스터를 선택</p>
-</li>
-<li><p>다른 알고리즘을 사용한다.</p>
-</li>
-</ol>
-<hr>
-<h2 id="문서-벡터화"><a href="#문서-벡터화" class="headerlink" title="문서 벡터화"></a>문서 벡터화</h2><ol>
-<li>정제<br>Bag of Words 모델을 단어 순서가 있는 1차원 벡터로 변환하는 과정(단어순서는 아무렇게나)</li>
-<li>전체 데이터에서 단어 카운트</li>
-<li>전체 데이터에서 50개 미만인 단어는 제거</li>
-<li>전체 데이터에서 50개 이상인 각 단어에 인덱스 할당</li>
-<li>문서 내에서 인덱스가 있는 단어의 단어 카운트</li>
-</ol>
-<hr>
-<h2 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h2><p>인공지능&amp;머신러닝을 공부하며 다시한번 느낀건데 파이썬 라이브러리들은 정말 대단한 것 같습니다. 파이썬이 왜 데이터 사이언스에서 중요해졌는지를 느끼게된 시간이었습니다.<br>이번 시간에선 고차원의 데이터를 시각화를 위해 저차원으로 줄이는 과정이 무척 인상적이었습니다. 간단히 라이브러리를 불러와서 적용하고, 처리한 데이터들을 조합해서 원하는 결과물을 만들어내는 과정을 보면 레고가 연상됩니다.<br>이는 데이터 사이언스라는 학문의 특성인것 같습니다.<br>개발자는 새로운 알고리즘을 만들거나 코드 하나하나 의미를 부여하며 더 나은 성능을 위해 노력한다면, 데이터 사이언티스트는 라이브러리들을 활용해 데이터를 분석하고 다양한 예측모델을 만들어내는 노력이 필요한 것 같습니다.<br>결국 원하는 것이 무엇이고, 목표를 위해 주어진 재료가 무엇이며, 어떻게 효율적으로 활용할 것인가 하는 문제를 끊임없이 생각하고, 더 나은 선택을 위해 지식과 경험을 넓혀 나가야겠다는 다짐을 했습니다.</p>
-
-        
-        </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 깃헙블로그 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-5586917880991745"
-     data-ad-slot="7913625251"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/" data-id="cjkqmex56000w0j9g1jxb1pwp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/#comments" class="article-comment-link"><span class="fb-comments-count" data-href="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/">0</span>&nbsp;Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -2049,6 +1988,15 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="no-thumbnail">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a></p>
+                            <p class="item-title"><a href="/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/" class="title">개발자용 새 맥북 초기 세팅</a></p>
+                            <p class="item-date"><time datetime="2020-01-31T13:28:47.000Z" itemprop="datePublished">2020-01-31</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -2086,15 +2034,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/iOS/">iOS</a></p>
-                            <p class="item-title"><a href="/IT/iOS/2018-02-05/iOS-프로젝트-템플릿/" class="title">[iOS]프로젝트 템플릿</a></p>
-                            <p class="item-date"><time datetime="2018-02-05T03:49:51.000Z" itemprop="datePublished">2018-02-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2104,7 +2043,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Computer-Science/">Computer-Science</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Data-Science/">Data-Science</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Swift/">Swift</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/iOS/">iOS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/개발지식/">개발지식</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Computer-Science/">Computer-Science</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Data-Science/">Data-Science</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Swift/">Swift</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/iOS/">iOS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/개발지식/">개발지식</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -2113,7 +2052,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -2122,7 +2061,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS/">CS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DS/">DS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Science/">Data-Science</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/">Exception</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FP/">FP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/">ML</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playground/">Playground</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storyboard/">Storyboard</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test/">Test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBar/">UITabBar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarController/">UITabBarController</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarItem/">UITabBarItem</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발지식/">개발지식</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/머신러닝/">머신러닝</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/인공지능/">인공지능</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/참관후기/">참관후기</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/함수형프로그래밍/">함수형프로그래밍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/후기/">후기</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS/">CS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DS/">DS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Science/">Data-Science</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/">Exception</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FP/">FP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/">ML</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playground/">Playground</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storyboard/">Storyboard</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test/">Test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBar/">UITabBar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarController/">UITabBarController</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarItem/">UITabBarItem</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발자/">개발자</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발지식/">개발지식</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/맥북/">맥북</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/머신러닝/">머신러닝</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/인공지능/">인공지능</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/참관후기/">참관후기</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/함수형프로그래밍/">함수형프로그래밍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/후기/">후기</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -2131,7 +2070,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/AI/" style="font-size: 17.5px;">AI</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/DS/" style="font-size: 17.5px;">DS</a> <a href="/tags/Data-Science/" style="font-size: 17.5px;">Data-Science</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Exception/" style="font-size: 10px;">Exception</a> <a href="/tags/FP/" style="font-size: 10px;">FP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/ML/" style="font-size: 17.5px;">ML</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Storyboard/" style="font-size: 10px;">Storyboard</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/TDD/" style="font-size: 12.5px;">TDD</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UITabBar/" style="font-size: 10px;">UITabBar</a> <a href="/tags/UITabBarController/" style="font-size: 10px;">UITabBarController</a> <a href="/tags/UITabBarItem/" style="font-size: 10px;">UITabBarItem</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/개발지식/" style="font-size: 10px;">개발지식</a> <a href="/tags/데이터베이스/" style="font-size: 10px;">데이터베이스</a> <a href="/tags/머신러닝/" style="font-size: 17.5px;">머신러닝</a> <a href="/tags/인공지능/" style="font-size: 17.5px;">인공지능</a> <a href="/tags/참관후기/" style="font-size: 10px;">참관후기</a> <a href="/tags/함수형프로그래밍/" style="font-size: 10px;">함수형프로그래밍</a> <a href="/tags/후기/" style="font-size: 10px;">후기</a>
+            <a href="/tags/AI/" style="font-size: 17.5px;">AI</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/DS/" style="font-size: 17.5px;">DS</a> <a href="/tags/Data-Science/" style="font-size: 17.5px;">Data-Science</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Exception/" style="font-size: 10px;">Exception</a> <a href="/tags/FP/" style="font-size: 10px;">FP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/ML/" style="font-size: 17.5px;">ML</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Storyboard/" style="font-size: 10px;">Storyboard</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/TDD/" style="font-size: 12.5px;">TDD</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UITabBar/" style="font-size: 10px;">UITabBar</a> <a href="/tags/UITabBarController/" style="font-size: 10px;">UITabBarController</a> <a href="/tags/UITabBarItem/" style="font-size: 10px;">UITabBarItem</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/개발자/" style="font-size: 10px;">개발자</a> <a href="/tags/개발지식/" style="font-size: 10px;">개발지식</a> <a href="/tags/데이터베이스/" style="font-size: 10px;">데이터베이스</a> <a href="/tags/맥북/" style="font-size: 10px;">맥북</a> <a href="/tags/머신러닝/" style="font-size: 17.5px;">머신러닝</a> <a href="/tags/인공지능/" style="font-size: 17.5px;">인공지능</a> <a href="/tags/참관후기/" style="font-size: 10px;">참관후기</a> <a href="/tags/함수형프로그래밍/" style="font-size: 10px;">함수형프로그래밍</a> <a href="/tags/후기/" style="font-size: 10px;">후기</a>
         </div>
     </div>
 
@@ -2160,7 +2099,7 @@ ga('send', 'pageview');
         <footer id="footer">
     <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2018 Taehyeon Jake LEE<br>
+            &copy; 2020 Taehyeon Jake LEE<br>
             Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
     </div>
