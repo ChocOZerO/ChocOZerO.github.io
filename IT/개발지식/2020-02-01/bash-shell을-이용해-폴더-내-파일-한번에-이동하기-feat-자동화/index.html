@@ -3,18 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2018/8 | ChocOZerO&#39;s Learning Pad</title>
+    <title>bash shell을 이용해 폴더 내 파일 한번에 이동하기(feat.자동화) | ChocOZerO&#39;s Learning Pad</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="IT Blog powered by Hexo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ChocOZerO&#39;s Learning Pad">
-<meta property="og:url" content="https://ChocOZerO.github.io/archives/2018/08/index.html">
+    <meta name="description" content="자동화자동화라는 말을 많이 들어왔을 겁니다.생산성을 위해선 필수적인 요소입니다.우리는 자동화에 항상 신경써야 시간을 효율적으로 사용하여 몸값을 올릴 수 있습니다.여러분의 시간이 곧 돈이기 때문이죠. 자동화를 다루는 내용만 빠르게 확인하고 싶으시면 하단의 bash shell script 부분 부터 읽으시면 됩니다. 문제점 파악지난 포스트를 오랜만에 작성하다">
+<meta name="keywords" content="bash,shell,자동화">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bash shell을 이용해 폴더 내 파일 한번에 이동하기(feat.자동화)">
+<meta property="og:url" content="https://ChocOZerO.github.io/IT/개발지식/2020-02-01/bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화/index.html">
 <meta property="og:site_name" content="ChocOZerO&#39;s Learning Pad">
-<meta property="og:description" content="IT Blog powered by Hexo">
+<meta property="og:description" content="자동화자동화라는 말을 많이 들어왔을 겁니다.생산성을 위해선 필수적인 요소입니다.우리는 자동화에 항상 신경써야 시간을 효율적으로 사용하여 몸값을 올릴 수 있습니다.여러분의 시간이 곧 돈이기 때문이죠. 자동화를 다루는 내용만 빠르게 확인하고 싶으시면 하단의 bash shell script 부분 부터 읽으시면 됩니다. 문제점 파악지난 포스트를 오랜만에 작성하다">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-01T08:47:55.056Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ChocOZerO&#39;s Learning Pad">
-<meta name="twitter:description" content="IT Blog powered by Hexo">
+<meta name="twitter:title" content="bash shell을 이용해 폴더 내 파일 한번에 이동하기(feat.자동화)">
+<meta name="twitter:description" content="자동화자동화라는 말을 많이 들어왔을 겁니다.생산성을 위해선 필수적인 요소입니다.우리는 자동화에 항상 신경써야 시간을 효율적으로 사용하여 몸값을 올릴 수 있습니다.여러분의 시간이 곧 돈이기 때문이죠. 자동화를 다루는 내용만 빠르게 확인하고 싶으시면 하단의 bash shell script 부분 부터 읽으시면 됩니다. 문제점 파악지난 포스트를 오랜만에 작성하다">
     
 
     
@@ -239,86 +241,202 @@ ga('send', 'pageview');
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 
-                <div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+                <article id="post-bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/Diary/2018-08-12/후기-TDD-참관-후기/">[후기]TDD-참관-후기</a>
+        <h1 class="article-title" itemprop="name">
+            bash shell을 이용해 폴더 내 파일 한번에 이동하기(feat.자동화)
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/Diary/2018-08-12/후기-TDD-참관-후기/">
-            <time datetime="2018-08-12T08:58:27.000Z" itemprop="datePublished">2018-08-12</time>
+        <a href="/IT/개발지식/2020-02-01/bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화/">
+            <time datetime="2020-02-01T07:27:46.000Z" itemprop="datePublished">2020-02-01</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Diary/">Diary</a>
-    </div>
-
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/TDD/">TDD</a>, <a class="tag-link" href="/tags/참관후기/">참관후기</a>, <a class="tag-link" href="/tags/후기/">후기</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/IT/개발지식/2018-08-12/Test-Driven-Development-TDD/">Test-Driven-Development(TDD)</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/IT/개발지식/2018-08-12/Test-Driven-Development-TDD/">
-            <time datetime="2018-08-12T07:48:40.000Z" itemprop="datePublished">2018-08-12</time>
-        </a>
-    </div>
-
-
-                    
+                        
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/개발지식/">개발지식</a>
     </div>
 
-                    
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/TDD/">TDD</a>, <a class="tag-link" href="/tags/Test/">Test</a>, <a class="tag-link" href="/tags/개발지식/">개발지식</a>
+        <a class="tag-link" href="/tags/bash/">bash</a>, <a class="tag-link" href="/tags/shell/">shell</a>, <a class="tag-link" href="/tags/자동화/">자동화</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="자동화"><a href="#자동화" class="headerlink" title="자동화"></a>자동화</h3><p>자동화라는 말을 많이 들어왔을 겁니다.<br>생산성을 위해선 필수적인 요소입니다.<br>우리는 자동화에 항상 신경써야 시간을 효율적으로 사용하여 몸값을 올릴 수 있습니다.<br>여러분의 시간이 곧 돈이기 때문이죠.</p>
+<p>자동화를 다루는 내용만 빠르게 확인하고 싶으시면 하단의 <strong>bash shell script</strong> 부분 부터 읽으시면 됩니다.</p>
+<h3 id="문제점-파악"><a href="#문제점-파악" class="headerlink" title="문제점 파악"></a>문제점 파악</h3><p>지난 포스트를 오랜만에 작성하다 보니 블로그를 쓰는데 개인적으로 불편한 점이 인지되었습니다.<br>다른 플랫폼과 달리 hexo 기반의 github io 를 이용한 블로그를 사용하면서 생긴 문제였는데요.</p>
+<p>먼저 간단히 hexo를 이용한 github io 블로그를 사용하면서 생긴 불편함을 공유하겠습니다.</p>
+<ol>
+<li>폴더 관리를 이원화 해야한다.<ul>
+<li>새 글을 작성하기 위한 hexo 활용을 위한 폴더 -&gt; private으로 관리하고 싶음</li>
+<li>githubid.github.io -&gt; 필수로 공개로 해야함</li>
+</ul>
+</li>
+<li>hexo에서 제공하는 deploy 기능은 github으로 바로 force push를 해서 관리하기가 불편함</li>
+</ol>
+<p>참고로 제가 deploy 하는 순서를 알려드리자면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new post &quot;제목&quot; // -&gt; 새로 글 쓸 파일 생성 -&gt; 파일 내용 작성</span><br><span class="line">hexo generate       // _post에 작성된 파일을 긁어서 html파일로 변환해줌</span><br><span class="line">hexo server         // localhost에서 확인 가능</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>저는 대안책으로 필수공개가 되어야 하는 githubid.github.io의 폴더를 직접 관리하면서 직접 푸쉬하는 방법을 생각했습니다.<br>가장 큰 이유는 readme가 매번 날아가기때문이었는데요.(이거 자동으로 세팅하는 방법이 있다면 알려주세요)<br>deploy 로 자동으로 push 할때 해당 파일이 생성이 안돼 덮어쓰면서 남기고 싶은 폴더 혹은 파일이 매번 사라진다는 단점이 있었습니다.<br>또 공개하고 싶지 않은 폴더 및 파일이 그대로 올라가는 문제가 있었습니다. <strong>.gitignore</strong>관리도 되지 않기 때문이죠.</p>
+<p>이 문제를 해결하기 위해 전 포스트될 내용에 필요한 파일만 공개된 repo에 복사를 해서 관리를 하기로 마음 먹었고, 필요한 내용을 일일이 복사해서 넘겨주어야 하는 문제가 생겼습니다.</p>
+<p>최소 4~5번의 복사 과정을 거쳐야 하는데 포스팅하는 주제가 늘어나면 폴더도 같이 늘어나 더 많은 작업을 해야했죠.<del>글 쓴 뒤 생각해보니까 그냥 finder에서 마우스로 복사해도 되는거였어..</del></p>
+<h2 id="bash-shell-script"><a href="#bash-shell-script" class="headerlink" title="bash shell script"></a>bash shell script</h2><p>이쯤에서 이걸 shell script를 이용해 자동화하면 좋겠다는 생각을 합니다.</p>
+<p>shell script를 간단히 소개해드리자면 결국 어떤 동작을 하는 작은 프로그램을 위한 파일을 미리 생성해 두는 겁니다.<br>스크립트를 작성해두고 필요한 순간에 해당 스크립트를 실행해 원하는 동작을 컴퓨터가 알아서 수행하도록 하는 것이죠.</p>
+<p>bash shell script는 기본적으로 확장자로 sh를 사용합니다.<br>그리고 첫 줄엔<br><strong>#!/bin/bash</strong><br>가 들어갑니다(bash 의 위치)</p>
+<p>기본적으로 프로그래밍을 조금 해봤다면 검색 몇번으로 활용법을 찾아보실 수 있을 거에요.</p>
+<p>전 제가 필요한 부분만 빠르게 습득해서 아래와 같이 테스트 해봤습니다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">lists=$(ls public)</span><br><span class="line">for item in $&#123;lists&#125;</span><br><span class="line">do</span><br><span class="line">    if [ $item != &quot;copy.sh&quot; ]</span><br><span class="line">    then</span><br><span class="line">        cp ./public/$item ../end/</span><br><span class="line">        echo &quot;done : &quot; $item</span><br><span class="line">    fi</span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>위 코드를 해석해보자면<br>첫줄은 shell script 를 실행하기 위해 필수로 들어가는 부분이고,<br>둘째줄은 명령어 ls의 결과<strong>(현 위치 하위의 public이라는 폴더에 있는 폴더 및 파일 목록을 나열)</strong>를 lists라는 변수에 담아두는 작업입니다.</p>
+<p>그 뒤로는 우리가 흔히 접하는 for문입니다.<br><strong>for</strong> 뒤에 흔히 사용하는 <strong>{}</strong> 대신 <strong>do</strong>와 <strong>done</strong>으로 원하는 내용을 감싸고 있다고 생각하시면 됩니다.<br><strong>if</strong>문엔 <strong>then</strong>과 <strong>fi</strong> 를 사용합니다.</p>
+<p>간단히 해석해드리자면,<br>lists에 담은 결과들 중 이 파일의 이름인 <strong>copy.sh</strong>이라는 이름을 제외 시켜 루프를 돌립니다.<br>그 모든 파일을 임시로 지정해 놓은 현재 속한 폴더와 동일한 depth에 있는 <strong>end</strong>라는 폴더에 <strong>cp</strong>명령어를 이용해 복사시킵니다.</p>
+<p>제가 원하는 동작이 제대로 됐는지 눈으로 바로 확인하기 위해 <strong>echo</strong>를 이용해 <strong>done :</strong>뒤에 어떤 파일인지 하나하나 출력해줍니다.</p>
+<p>실행은 ./copy.sh 명령어를 사용합니다.<br>만약에 실행권한이 없다면<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x copy.sh</span><br></pre></td></tr></table></figure></p>
+<p>를 이용해 실행권한을 줍니다.<del>sudo를 써도 될 듯 하네요</del></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">done :  Diary</span><br><span class="line">done :  IT</span><br><span class="line">done :  archives</span><br><span class="line">done :  categories</span><br><span class="line">done :  content.json</span><br><span class="line">done :  css</span><br><span class="line">done :  index.html</span><br><span class="line">done :  js</span><br><span class="line">done :  page</span><br><span class="line">done :  resume</span><br><span class="line">done :  tags</span><br></pre></td></tr></table></figure>
+<p>위가 출력된 결과 입니다.<br>제가 포스팅 하고 있는 폴더들과 그 외 필요한 파일들이 잘 처리되었다고 출력되었습니다.<br>해당 폴더에서 확인해보는 것도 잊지 않아야겠죠?</p>
+<p>제 작업이 실제 원하는 곳으로 잘 전달된건 여러분도 확인하실 수 있어요.<br>바로 이 포스트가 그 방법으로 올라왔기 때문이죠.</p>
+<p>읽어 주셔서 고맙습니다.<br>다음에 또 다른 팁으로 돌아올게요 :)</p>
+
+        
         </div>
-    
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="https://ChocOZerO.github.io/IT/개발지식/2020-02-01/bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화/" data-id="ck63ct4mg000gfkcmnbn1w3py" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://ChocOZerO.github.io/IT/개발지식/2020-02-01/bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화/#comments" class="article-comment-link"><span class="fb-comments-count" data-href="https://ChocOZerO.github.io/IT/개발지식/2020-02-01/bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화/">0</span>&nbsp;Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">개발자용 새 맥북 초기 세팅</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+      
+    <div class="fb-comments" data-width="100%" data-href="https://ChocOZerO.github.io/IT/개발지식/2020-02-01/bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화/" data-num-posts="5"></div>
+
+
+    
+    </section>
+
+
 
             </section>
             

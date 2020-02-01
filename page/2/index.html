@@ -175,11 +175,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                16
+                17
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                33
+                36
                 <span>tags</span>
             </div>
         </div>
@@ -240,6 +240,233 @@ ga('send', 'pageview');
 </script>
 
                 
+    <article id="post-인공지능-머신러닝-맛보기04" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/">인공지능-머신러닝-맛보기04</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/">
+            <time datetime="2017-10-02T14:50:22.000Z" itemprop="datePublished">2017-10-02</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/Data-Science/">Data-Science</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/AI/">AI</a>, <a class="tag-link" href="/tags/DS/">DS</a>, <a class="tag-link" href="/tags/Data-Science/">Data-Science</a>, <a class="tag-link" href="/tags/ML/">ML</a>, <a class="tag-link" href="/tags/머신러닝/">머신러닝</a>, <a class="tag-link" href="/tags/인공지능/">인공지능</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>아래의 글은 <a href="https://academy.elice.io" target="_blank" rel="noopener">elice(엘리스)</a> 에서 진행한 <strong>인공지능/머신러닝 맛보기</strong> 수업을 듣고 개인 공부를 목적으로 정리한 글입니다.<br>학습자료가 따로 있기에 그림이나 예제등 자세한 내용 없이 키워드와 기억하고 싶은 내용, 궁금해서 따로 검색해 놓은 내용만 적어놓은 것임을 밝힙니다.</p>
+<hr>
+<h1 id="이상-탐지-amp-추천-알고리즘"><a href="#이상-탐지-amp-추천-알고리즘" class="headerlink" title="이상 탐지 &amp; 추천 알고리즘"></a>이상 탐지 &amp; 추천 알고리즘</h1><h2 id="정규분포"><a href="#정규분포" class="headerlink" title="정규분포"></a>정규분포</h2><ul>
+<li>Normal Distribution</li>
+<li>Gaussian Distribution</li>
+</ul>
+<p>자연에서 발생하는 데이터를 설명하는 방법 중 하나</p>
+<ul>
+<li>사람의 키</li>
+<li>기계에서 만들어내는 물건들의 크기</li>
+<li>측정치(오차 포함)</li>
+<li>시험 점수</li>
+</ul>
+<p>보통 Bell curve를 그린다.<br>이런 분포들을 “정규분포를 따른다” 라고 한다.</p>
+<p>초기에 Bean Machine - “Quincunx” or “Galton Box” 를 활용해 밑에 떨어진 공의 개수가 정규분포를 따른다는 사실을 도출해냄</p>
+<p>σ(sigma) = Standard deviation, “표준 편차”<br>이전 강의에 나온 분산은 sigma의 제곱이다.(σ²) - 데이터가 퍼져있는 정도<br>작을 수록 데이터가 덜 퍼져있다는 것을 의미.<br>N(μ, σ²)<br>위의 N은 Normal Distribution을 나타낸다.<br>평균 μ(mu-뮤)는 정확히 중간을 가리킨다.</p>
+<p>1차원 데이터를 히스토그램을 활용해서 시각화하는 방법이 있다.<br>히스토그램이 정규분포를 표현한다.</p>
+<p>트레이닝한 모델을 활용해서 원하는 데이터가 나올 확률이 적다면 이상점(anomaly) 으로 판단할 수 있다.</p>
+<h3 id="Gaussian-Mixture-Model-GMM"><a href="#Gaussian-Mixture-Model-GMM" class="headerlink" title="Gaussian Mixture Model (GMM)"></a>Gaussian Mixture Model (GMM)</h3><p>두 개 이상의 데이터 모델이 섞여 있는 경우<br>어떤 데이터가 있을 때 각각의 모델에 매치될 확률을 찾을 수 있다.<br>2차원에 점을 찍으면 등고선처럼 구분할 수 있다.<br>분산이 크면 등고선이 넓고 각각의 모델은 클러스터로 구분이 된다.<br>평균(등고선의 정상)에 가까울수록 해당 모델일 확률이 높아진다.</p>
+<h2 id="협업-필터링-Collaborative-Filtering"><a href="#협업-필터링-Collaborative-Filtering" class="headerlink" title="협업 필터링(Collaborative Filtering)"></a>협업 필터링(Collaborative Filtering)</h2><p>두 가지 방법 이 있다.</p>
+<ol>
+<li>유저 기반 협업 필터링 - 예)당신과 비슷한 사람은 이 영화를 봤으니 당신도 좋아할거에요.</li>
+<li>아이템 기반 협업 필터링 - 예)당신이 봤던 영화들과 비슷한 영화들은 당신도 좋아할거에요.</li>
+</ol>
+<h3 id="유저-기반-협업-필터링"><a href="#유저-기반-협업-필터링" class="headerlink" title="유저 기반 협업 필터링"></a>유저 기반 협업 필터링</h3><ol>
+<li><p>유저간의 유사도를 구한다.(벡터를 활용 - 각각의 데이터 벡터를 모아 매트릭스(matrix)를 만든다)</p>
+<ul>
+<li>코사인 유사도 : 두개의 벡터 사이에 각도를 본다. 각도가 작을 수록 높은 유사도를 갖는다.</li>
+</ul>
+</li>
+<li><p>유사도를 고려하여 각 영화에 대해 다른 유저의 추천도를 계산한다.</p>
+<ul>
+<li>각 유사도를 활용해 각 유저별 점수의 평균 수치를 활용한다.</li>
+</ul>
+</li>
+</ol>
+<h3 id="아이템-기반-협업-필터링"><a href="#아이템-기반-협업-필터링" class="headerlink" title="아이템 기반 협업 필터링"></a>아이템 기반 협업 필터링</h3><p>다른 사람에게 선택 됐는지 안됐는지를 통해 수치를 계산 하는 것</p>
+<ol>
+<li>아이템간의 비교(유저간 비교와 비슷하지만 벡터를 아이템별로 만든다)</li>
+<li>각 아이템의 유사도를 고려하여 아이템을 추천한다.</li>
+</ol>
+<h2 id="평가-기반"><a href="#평가-기반" class="headerlink" title="평가 기반"></a>평가 기반</h2><p>평가를 기반으로 계산<br>평가 수치를 가지고 계산하는 것으로 위의 단순하게 1과 0(영화를 봤는지 안봤는지)으로 나누는 것보다 더 효율적일 확률이 높다.<br>마찬가지로 유저 기반 협업 필터링과 아이템 기반 협업 필터링으로 나눌 수 있다.<br>중요한 것은 평가를 하지 않았다를 0으로 두면 안된다는 것이다.<br>평가하지 않은 것은 어떤 평가를 할 지 모르는 것이고 0을 주는 것은 나쁘게 평가하는 1과 비슷하므로 엄연히 다른 값이다.<br>평가가 되지 않은 Missing Data는 보통 평균값을 대입하고, 수치에 변별력이 없다고 판단되면 다른 방식 혹은 데이터마다 알맞은 값을 넣어서 계산을 한다.</p>
+<hr>
+<h2 id="참고-해볼만한-자료"><a href="#참고-해볼만한-자료" class="headerlink" title="참고 해볼만한 자료"></a>참고 해볼만한 자료</h2><ul>
+<li>Netflix Prize Data</li>
+</ul>
+<hr>
+<h2 id="총정리"><a href="#총정리" class="headerlink" title="총정리"></a>총정리</h2><ul>
+<li><p>머신러닝</p>
+<ul>
+<li>지도 학습<ul>
+<li>Linear Regression(선형 회귀법)</li>
+<li>Classification(분류) - Naive Bayes(나이브 베이즈)</li>
+</ul>
+</li>
+<li>비지도 학습<ul>
+<li>Dimension Reduction(차원축소) - PCA</li>
+<li>Clustering(클러스터링) - K-Means<ul>
+<li>Hard Clustering : K-Means</li>
+<li>Soft Clustering : GMM</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>추천 시스템<ul>
+<li>Collaborative Filtering(협업 필터링)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>안배운 개념</p>
+<ul>
+<li>Reinforcement Learning(강화 학습)</li>
+<li>Optimization(최적화)</li>
+<li>Batch Learning(한번에 배운다)</li>
+<li>Online Learning(천천히 배운다)</li>
+<li>SVM Support Vector Machine(서포트 벡터 머신) - 지도 학습 분류에 좋다</li>
+<li>Deep Learning(딥러닝) - 보통 지도 학습의 분류에 사용</li>
+<li>그 외에 무수히 많다.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="마치며"><a href="#마치며" class="headerlink" title="마치며"></a>마치며</h2><p>그 동안 4번의 강의를 통해 인공지능과 머신러닝에 대한 대략적인 개념과 활용범위를 배웠습니다.<br>사실 지금 당장 사용할 지식을 배운 것은 아닙니다. 그러나 이번 코스를 통해 개발자와 수학에 대한 연결고리를 느낄 수 있었고, 앞으로 개발자 커리어에 대한 고민을 많이 해볼 수 있는 기회였습니다.<br>언제나 그렇듯 지식은 한번에 새로운 것들을 이루기 위한 것이라기 보다는 기반으로 삼아 응용하고 발전하기 위해 활용되는 것으로도 충분히 가치가 있다고 생각합니다.<br>앞으로도 다양한 분야의 지식을 쌓고 발전시켜 폭넓게 사고할 수 있는 개발자가 되려고 노력할 것입니다.</p>
+
+        
+        </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 깃헙블로그 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-5586917880991745"
+     data-ad-slot="7913625251"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/" data-id="ck63ct4ms0014fkcmwcuakh21" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="https://ChocOZerO.github.io/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/#comments" class="article-comment-link"><span class="fb-comments-count" data-href="https://ChocOZerO.github.io/IT/Data-Science/2017-10-02/인공지능-머신러닝-맛보기04/">0</span>&nbsp;Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+
     <article id="post-인공지능-머신러닝-맛보기03" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -396,7 +623,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/" data-id="ck629zsia002aujcm9ulhni1g" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-25/인공지능-머신러닝-맛보기03/" data-id="ck63ct4mr0012fkcmjlcllbh7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -594,7 +821,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-23/인공지능-머신러닝-맛보기02/" data-id="ck629zsi90026ujcm51v8l1jh" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-23/인공지능-머신러닝-맛보기02/" data-id="ck63ct4mq000zfkcmus72d4o6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -818,7 +1045,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-19/인공지능-머신러닝-맛보기01/" data-id="ck629zsi70023ujcmgsvb8nxl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/Data-Science/2017-09-19/인공지능-머신러닝-맛보기01/" data-id="ck63ct4mo000wfkcm6cknotf9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1030,7 +1257,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/Computer-Science/2017-09-11/데이터베이스/" data-id="ck629zsi6001zujcmi9yt9o98" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/Computer-Science/2017-09-11/데이터베이스/" data-id="ck63ct4mn000tfkcm6o3rcq49" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1259,7 +1486,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/IT/Java/2017-08-31/Exception-처리/" data-id="ck629zshq0016ujcmdggjwdhw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/IT/Java/2017-08-31/Exception-처리/" data-id="ck63ct4m80008fkcmf8tdvrcn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1404,7 +1631,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="https://ChocOZerO.github.io/Diary/2017-08-03/Blog-시작/" data-id="ck629zsho0014ujcmlfifjisc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://ChocOZerO.github.io/Diary/2017-08-03/Blog-시작/" data-id="ck63ct4m50006fkcm6h7wl49s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1500,6 +1727,15 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/개발지식/">개발지식</a></p>
+                            <p class="item-title"><a href="/IT/개발지식/2020-02-01/bash-shell을-이용해-폴더-내-파일-한번에-이동하기-feat-자동화/" class="title">bash shell을 이용해 폴더 내 파일 한번에 이동하기(feat.자동화)</a></p>
+                            <p class="item-date"><time datetime="2020-02-01T07:27:46.000Z" itemprop="datePublished">2020-02-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
                             <p class="item-category"><a class="article-category-link" href="/categories/Diary/">Diary</a></p>
                             <p class="item-title"><a href="/Diary/2020-01-31/개발자용-새-맥북-초기-세팅/" class="title">개발자용 새 맥북 초기 세팅</a></p>
                             <p class="item-date"><time datetime="2020-01-31T13:28:47.000Z" itemprop="datePublished">2020-01-31</time></p>
@@ -1533,15 +1769,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/IT/">IT</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/IT/iOS/">iOS</a></p>
-                            <p class="item-title"><a href="/IT/iOS/2018-02-05/iOS-Xcode로-UI다루기-기초/" class="title">[iOS]Xcode로 UI다루기 기초</a></p>
-                            <p class="item-date"><time datetime="2018-02-05T07:00:43.000Z" itemprop="datePublished">2018-02-05</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1551,7 +1778,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Computer-Science/">Computer-Science</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Data-Science/">Data-Science</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Swift/">Swift</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/iOS/">iOS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/개발지식/">개발지식</a><span class="category-list-count">1</span></li></ul></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Diary/">Diary</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a><span class="category-list-count">14</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Computer-Science/">Computer-Science</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Data-Science/">Data-Science</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Java/">Java</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/JavaScript/">JavaScript</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/Swift/">Swift</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/iOS/">iOS</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/개발지식/">개발지식</a><span class="category-list-count">2</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -1560,7 +1787,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">October 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1569,7 +1796,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS/">CS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DS/">DS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Science/">Data-Science</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/">Exception</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FP/">FP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/">ML</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playground/">Playground</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storyboard/">Storyboard</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test/">Test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBar/">UITabBar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarController/">UITabBarController</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarItem/">UITabBarItem</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발자/">개발자</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발지식/">개발지식</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/맥북/">맥북</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/머신러닝/">머신러닝</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/인공지능/">인공지능</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/참관후기/">참관후기</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/함수형프로그래밍/">함수형프로그래밍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/후기/">후기</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CS/">CS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DS/">DS</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Data-Science/">Data-Science</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/">Database</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exception/">Exception</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FP/">FP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JS/">JS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ML/">ML</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Playground/">Playground</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Storyboard/">Storyboard</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Swift/">Swift</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TDD/">TDD</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Test/">Test</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UI/">UI</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBar/">UITabBar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarController/">UITabBarController</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITabBarItem/">UITabBarItem</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Xcode/">Xcode</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/icarus/">icarus</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발자/">개발자</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/개발지식/">개발지식</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/데이터베이스/">데이터베이스</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/맥북/">맥북</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/머신러닝/">머신러닝</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/인공지능/">인공지능</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/자동화/">자동화</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/참관후기/">참관후기</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/함수형프로그래밍/">함수형프로그래밍</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/후기/">후기</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1578,7 +1805,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/AI/" style="font-size: 17.5px;">AI</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/DS/" style="font-size: 17.5px;">DS</a> <a href="/tags/Data-Science/" style="font-size: 17.5px;">Data-Science</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Exception/" style="font-size: 10px;">Exception</a> <a href="/tags/FP/" style="font-size: 10px;">FP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/ML/" style="font-size: 17.5px;">ML</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Storyboard/" style="font-size: 10px;">Storyboard</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/TDD/" style="font-size: 12.5px;">TDD</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UITabBar/" style="font-size: 10px;">UITabBar</a> <a href="/tags/UITabBarController/" style="font-size: 10px;">UITabBarController</a> <a href="/tags/UITabBarItem/" style="font-size: 10px;">UITabBarItem</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/개발자/" style="font-size: 10px;">개발자</a> <a href="/tags/개발지식/" style="font-size: 10px;">개발지식</a> <a href="/tags/데이터베이스/" style="font-size: 10px;">데이터베이스</a> <a href="/tags/맥북/" style="font-size: 10px;">맥북</a> <a href="/tags/머신러닝/" style="font-size: 17.5px;">머신러닝</a> <a href="/tags/인공지능/" style="font-size: 17.5px;">인공지능</a> <a href="/tags/참관후기/" style="font-size: 10px;">참관후기</a> <a href="/tags/함수형프로그래밍/" style="font-size: 10px;">함수형프로그래밍</a> <a href="/tags/후기/" style="font-size: 10px;">후기</a>
+            <a href="/tags/AI/" style="font-size: 17.5px;">AI</a> <a href="/tags/CS/" style="font-size: 10px;">CS</a> <a href="/tags/DS/" style="font-size: 17.5px;">DS</a> <a href="/tags/Data-Science/" style="font-size: 17.5px;">Data-Science</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/Exception/" style="font-size: 10px;">Exception</a> <a href="/tags/FP/" style="font-size: 10px;">FP</a> <a href="/tags/JS/" style="font-size: 10px;">JS</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/ML/" style="font-size: 17.5px;">ML</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Storyboard/" style="font-size: 10px;">Storyboard</a> <a href="/tags/Swift/" style="font-size: 10px;">Swift</a> <a href="/tags/TDD/" style="font-size: 12.5px;">TDD</a> <a href="/tags/Test/" style="font-size: 10px;">Test</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/UITabBar/" style="font-size: 10px;">UITabBar</a> <a href="/tags/UITabBarController/" style="font-size: 10px;">UITabBarController</a> <a href="/tags/UITabBarItem/" style="font-size: 10px;">UITabBarItem</a> <a href="/tags/Xcode/" style="font-size: 15px;">Xcode</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/iOS/" style="font-size: 20px;">iOS</a> <a href="/tags/icarus/" style="font-size: 10px;">icarus</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/개발자/" style="font-size: 10px;">개발자</a> <a href="/tags/개발지식/" style="font-size: 10px;">개발지식</a> <a href="/tags/데이터베이스/" style="font-size: 10px;">데이터베이스</a> <a href="/tags/맥북/" style="font-size: 10px;">맥북</a> <a href="/tags/머신러닝/" style="font-size: 17.5px;">머신러닝</a> <a href="/tags/인공지능/" style="font-size: 17.5px;">인공지능</a> <a href="/tags/자동화/" style="font-size: 10px;">자동화</a> <a href="/tags/참관후기/" style="font-size: 10px;">참관후기</a> <a href="/tags/함수형프로그래밍/" style="font-size: 10px;">함수형프로그래밍</a> <a href="/tags/후기/" style="font-size: 10px;">후기</a>
         </div>
     </div>
 
